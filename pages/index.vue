@@ -1,28 +1,6 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <ul class="m-0 flex items-center my-3">
-        <li class="list-none">
-          <NuxtLink to="/" class="px-3 py-3 hover:underline" 
-            :class="($nuxt.$route.path === '/') ? 'border-b border-green-600' : ''">
-            Home
-          </NuxtLink>
-        </li>
-        <li class="list-none">
-          <NuxtLink to="/mountains" class="px-3 py-3 hover:underline"
-            :class="($nuxt.$route.name === 'mountains') ? 'border-b border-green-600' : ''">
-            Mountains
-          </NuxtLink>
-        </li>
-        <li class="list-none">
-          <NuxtLink to="/about" class="px-3 py-3 hover:underline"
-            :class="($nuxt.$route.name === 'about') ? 'border-b border-green-600' : ''">
-            About
-          </NuxtLink>
-        </li>
-      </ul>
-    </div>
+    
   </div>
 </template>
 

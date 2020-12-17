@@ -1,5 +1,5 @@
 <template>
-	<div class="container mx-auto px-6 py-6 w-full">
+	<div class="w-full">
 
 		<div v-if="$fetchState.pending" class="">
 			<p class="text-xl text-green-600 my-3 capitalize">

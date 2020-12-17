@@ -1,5 +1,29 @@
 <template>
-  <div class="w-full">
+  <div class="px-6 py-6 max-w-3xl mx-auto">
+    <div class="mb-6">
+      <Logo />
+      <ul class="m-0 flex items-center my-3 justify-center">
+        <li class="list-none">
+          <NuxtLink to="/" class="mr-8 py-3 hover:underline text-green-600" 
+            :class="($nuxt.$route.path === '/') ? 'border-b border-green-600' : ''">
+            Home
+          </NuxtLink>
+        </li>
+        <li class="list-none">
+          <NuxtLink to="/mountains" class="mr-8 py-3 hover:underline text-green-600"
+            :class="($nuxt.$route.name === 'mountains') ? 'border-b border-green-600' : ''">
+            Mountains
+          </NuxtLink>
+        </li>
+        <li class="list-none">
+          <NuxtLink to="/about" class="mr-8 py-3 hover:underline text-green-600"
+            :class="($nuxt.$route.name === 'about') ? 'border-b border-green-600' : ''">
+            About
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+
     <Nuxt />
   </div>
 </template>
