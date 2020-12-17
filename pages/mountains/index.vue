@@ -1,5 +1,5 @@
 <template>
-	<div class="container mx-auto px-6 py-6">
+	<div class="container mx-auto px-6 py-6 w-full">
 
 		<div v-if="$fetchState.pending" class="">
 			<p class="text-xl text-green-600 my-3 capitalize">
@@ -53,6 +53,19 @@
 </template>
 <script>
 	export default {
+		head: {
+		    title: 'Mountains',
+		    meta: [
+		      { charset: 'utf-8' },
+		      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+		      { 
+		      	hid: 'description',//make sure to load only one
+		      	name: 'description', content: 'Beautiful Mountains around the world.' }
+		    ],
+		    link: [
+		      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+		    ]
+		  },
 	    async fetch() {
 	      this.mountains = await fetch(
 	        'https://api.nuxtjs.dev/mountains'
@@ -60,7 +73,7 @@
 	    },
 		data(){
 			return {
-				show      : false,
+				show      : true,
 				mountains : []
 			}
 		},

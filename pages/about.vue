@@ -1,8 +1,6 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-
       <ul class="m-0 flex items-center my-3">
         <li class="list-none">
           <NuxtLink to="/" class="px-3 py-3 hover:underline" 

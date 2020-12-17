@@ -13,7 +13,7 @@
 
       </div>
 
-      <p class="text-md mt-2">{{  mountain.description }}</p>
+      <p class="text-md mt-2 text-left">{{  mountain.description }}</p>
     </div>
   </div>
 </template>
