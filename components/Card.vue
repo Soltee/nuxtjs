@@ -6,9 +6,9 @@
         class="object-cover rounded-t md:rounded-none md:rounded-l h-full w-full md:w-64">
 
     <div class="rounded-r p-3">
-      <div class="flex items-center">
+      <div class="flex items-center justify-between">
         
-        <h1 class="text-xl  m-0 mr-3">{{ mountain.title }}</h1>
+        <h1 class="text-xl  m-0 mr-3 font-bold">{{ mountain.title }}</h1>
         <p class="text-md rounded bg-green-600 p-2 text-white">{{  format(mountain.updatedAt) }}</p>
 
       </div>
@@ -29,12 +29,13 @@
         },
       }
     },
-    methods: {
+    methods:  {
       format(param) {
         let date = new Date(param);
-        return date;
-        // return date->format('YYYY-MM-DD H:i:s');
-      }
+        let string = date.toString();
+
+        return string.slice(0, 15) + (string.length > 15 ? "" : "");
+      },
     }
   };
 </script>
