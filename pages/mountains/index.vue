@@ -6,12 +6,12 @@
 				Fetching mountains...
 			</p>
 
-			<ErrorCard v-for="i in [1,2,3,4]"/>
+			<LoadingCard v-for="i in [1,2,3,4]"/>
 		</div>
   		<p v-else-if="$fetchState.error" class="text-xl text-red-600 my-3">An error occurred :(</p>
 
-  		<div v-else>
-  			<div class="flex justify-between items-center mb-4">
+  		<div v-else class="w-full">
+  			<div class="w-full flex justify-between mb-4">
   				<div class="flex items-center">
   					<NuxtLink to="/" 
   						class="mr-3 text-green-500"
@@ -20,9 +20,16 @@
   					</NuxtLink>
   					<h1 class="text-xl text-green-600">Mountains</h1>
   				</div>
-  				<button 
-  					v-if="mountains.length > 0" 
-  					@click="$fetch" class="px-3 py-2 rounded bg-green-600 text-white">Refresh</button>
+
+  				<div class="flex items-center">
+  					
+	  				<button 
+	  					v-if="mountains.length > 0 && show" 
+	  					@click="$fetch" class="px-3 py-2 rounded bg-green-600 text-white">Refresh</button>
+	  				<button 
+	  					v-else 
+	  					@click="show = !show" class="px-3 py-2 rounded bg-green-600 text-white">Show Mountains</button>	
+  				</div>
 
   			</div>
 
@@ -30,7 +37,7 @@
   				v-if="mountains.length > 0"
   				class="">
   				
-				<Card 
+				<LazyCard v-if="show"
 					v-for="mountain in mountains"
 					:key="mountain.title"
 					:mountain="mountain" 
@@ -53,6 +60,7 @@
 	    },
 		data(){
 			return {
+				show      : false,
 				mountains : []
 			}
 		},
