@@ -8,7 +8,28 @@
 </template>
 
 <script>
-export default {};
+export default {
+	head: {
+	  title : 'About',
+      // titleTemplate : '%s |',
+      htmlAttrs: {
+        lang: 'en',
+        amp  : true
+      },
+      bodyAttrs: {
+        class : ['dark-mode', 'mobile']
+      },// <body class="${}"
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'Portfolio' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        // { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css' },
+      ]
+    },
+};
 </script>
 
 <style>

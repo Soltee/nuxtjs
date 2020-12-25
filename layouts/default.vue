@@ -31,7 +31,6 @@
 <script>
   export default {
     head: {
-      title: 'soltee',
       titleTemplate : '%s |',
       htmlAttrs: {
         lang: 'en',
