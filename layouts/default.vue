@@ -4,19 +4,19 @@
       <Logo />
       <ul class="m-0 flex items-center my-3 justify-center">
         <li class="list-none">
-          <NuxtLink to="/" class="mr-8 py-3 hover:underline text-green-600" 
+          <NuxtLink to="/" class="mr-8 py-3 border-b border-transparent hover:border-gray-600 text-green-600" 
             :class="($nuxt.$route.path === '/') ? 'border-b border-green-600' : ''">
             Home
           </NuxtLink>
         </li>
         <li class="list-none">
-          <NuxtLink to="/mountains" class="mr-8 py-3 hover:underline text-green-600"
+          <NuxtLink to="/mountains" class="mr-8 py-3  border-b border-transparent hover:border-gray-600 text-green-600"
             :class="($nuxt.$route.name === 'mountains') ? 'border-b border-green-600' : ''">
             Mountains
           </NuxtLink>
         </li>
         <li class="list-none">
-          <NuxtLink to="/about" class="mr-8 py-3 hover:underline text-green-600"
+          <NuxtLink to="/about" class="mr-8 py-3  border-b border-transparent hover:border-gray-600 text-green-600"
             :class="($nuxt.$route.name === 'about') ? 'border-b border-green-600' : ''">
             About
           </NuxtLink>
@@ -50,6 +50,12 @@
         // { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css' },
       ]
     },
+    transition(to, from) {
+      if (!from) {
+        return 'slide-left'
+      }
+      return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+    }
   };
 </script>
 <style>
@@ -79,32 +85,13 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
 </style>

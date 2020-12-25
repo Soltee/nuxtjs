@@ -6,7 +6,7 @@
 				Fetching mountains...
 			</p>
 
-			<LoadingCard v-for="i in [1,2,3,4]"/>
+			<LoadingCard v-for="(i, index) in [1,2,3,4]" :key="index"/>
 		</div>
   		<p v-else-if="$fetchState.error" class="text-xl text-red-600 my-3">An error occurred :(</p>
 

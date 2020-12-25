@@ -1,11 +1,13 @@
 <template>
-  <div class="container">
-    
+  <div class="container my-3">
+      <p class="text-green-600 text-xl">Welcome to NuxtJS</p>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  
+};
 </script>
 
 <style>
@@ -16,7 +18,6 @@ export default {}
 */
 .container {
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,4 +53,5 @@ export default {}
 .links {
   padding-top: 15px;
 }
+
 </style>
