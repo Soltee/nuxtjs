@@ -1,14 +1,24 @@
 <template>
   <div class="flex flex-col md:flex-row mb-6 rounded md:h-64 w-full">
-    <img 
+    
+    <div class="h-64 w-full  md:w-1/3">
+      
+    <NuxtLink :to="`/mountains/${mountain.id}`" class="hover:opacity-75" >
+      <img 
         :src="mountain.image" 
         :alt="mountain.title"         
-        class="object-cover rounded-t md:rounded-none md:rounded-l h-full w-full md:w-64">
+        class="object-cover rounded-t md:rounded-none md:rounded-l h-full w-full">
 
-    <div class="rounded-r p-3">
+    </NuxtLink>
+
+    </div>
+    <div class="rounded-r p-3 flex-1">
       <div class="flex items-center justify-between">
         
-        <h1 class="text-xl  m-0 mr-3 font-bold">{{ mountain.title }}</h1>
+        <NuxtLink :to="`/mountains/${mountain.id}`" class="hover:opacity-75" >
+            <h1 class="text-xl  m-0 mr-3 font-bold">{{ mountain.title }}</h1>
+        </NuxtLink>
+
         <p class="text-md rounded bg-green-600 p-2 text-white">{{  format(mountain.updatedAt) }}</p>
 
       </div>
